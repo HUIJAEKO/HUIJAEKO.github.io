@@ -15,12 +15,12 @@
 minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
-locale                   : "ko-KO"
-title                    : "HUIJAE'S 기술블로그"
+locale                   : "en-US"
+title                    : "Huijae'S Blog"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
-name                     : "HUIJAE KO"
-description              : "Make the world more convenient ."
+name                     : "HUIJAEKO"
+description              : "비전공자의 소소한 개발이야기"
 url                      : "https://HUIJAEKO.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
