@@ -21,14 +21,17 @@ title: "애니메이션 효과 구현"
 
 8.animation-fill-mode : 애니메이션이 시작되기 전이나 끝나고 난 후 어떤 값이 적용될지 지정한다.
 
+
+
 애니메이션 속성들을 설정하고 이후에 @keyframe으로 시간에 따른 효과들을 구현할 수 있다. 
 
 예를 들어 간단하게 이런 방식으로 할 수 있다.
 
-```main .Login form button:hover{animation:sunday 0.5s; animation-fill-mode:forwards;}
+```
+button:hover{animation:sunday 0.5s; animation-fill-mode:forwards;}
 
 @keyframes sunday{
     
     0%{background:greenyellow}
     
-    100%{background:green}}```
+    100%{background:green}}
