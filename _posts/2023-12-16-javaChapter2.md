@@ -4,10 +4,15 @@ title: "What is java"
 ---
 
 파일 실행: 고급 언어가 컴파일되어 기계어로 변환된 뒤 컴퓨터가 사용
+
 캐멀스타일: 자바 소스 파일명은 대문자로 시작(MemberGrade.java), 변수명은 소문자로 시작(mathScore)
+
 변수 선언: 하나의 값을 저장할 수 있는 메모리 번지에 붙여진 이름
+
 정수 타입: byte, char, short, int, long
+
 실수 타입: float, double
+
 논리: boolean
 
 
