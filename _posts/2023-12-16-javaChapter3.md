@@ -12,6 +12,7 @@ title: "calculate"
 ArithmeticException: 연산값이 intinity이거나 nan일때 발생, Double.isInfinite와 Double.isNaN을 사용해서 확인하는 것이 좋다.
 
 - **삼항 조건 연산자**
+- 
 ```java
 public static void main(String[] args){
   int score = 85;
