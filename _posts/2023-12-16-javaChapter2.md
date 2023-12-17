@@ -31,12 +31,14 @@ byte byteValue = (byte)intValue;
 ```
 
 - **변환 타입**: 문자열을 기본 타입으로 변환할 수도 있다.
+
 ```java
 String str = "200";
 int value = Integer.parseInt(str);
 ```
 
 - **변수 사용 범위:{}내에서 선언된 변수는 해당 중괄호 블록 내에서만 사용할 수 있다.**
+
 ```java
 public static void main(String[] args){
   int var1;
