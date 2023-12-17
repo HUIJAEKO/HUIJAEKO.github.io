@@ -3,7 +3,7 @@ layout: single
 title: "What is java"
 ---
 
-파일 실행: 고급 언어가 컴파일되어 기계어로 변환된 뒤 컴퓨터가 사용
+**파일 실행: 고급 언어가 컴파일되어 기계어로 변환된 뒤 컴퓨터가 사용**
 
 캐멀스타일: 자바 소스 파일명은 대문자로 시작(MemberGrade.java), 변수명은 소문자로 시작(mathScore)
 
@@ -35,7 +35,7 @@ String str = "200";
 int value = Integer.parseInt(str);
 ```
 
-변수 사용 범위:{}내에서 선언된 변수는 해당 중괄호 블록 내에서만 사용할 수 있다.
+**변수 사용 범위:{}내에서 선언된 변수는 해당 중괄호 블록 내에서만 사용할 수 있다.**
 ```java
 public static void main(String[] args){
   int var1;
