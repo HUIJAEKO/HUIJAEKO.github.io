@@ -5,37 +5,37 @@ title: "문자열"
 
 **문자열 다루기**
 
-- 문자 추출: charAt() 사용
+- **문자 추출**: charAt() 사용
 ```java
 String subejct = "자바 프로그래밍";
 char charValue = subject.charAt(3);
 ```
 
-- 문자 길이: length()사용
+- **문자 길이**: length()사용
 ```java
 String subejct = "자바 프로그래밍";
 int length = subject.length();
 ```
 
-- 문자열 대체: replace()사용
+- **문자열 대체**: replace()사용
 ```java
 String subejct = "자바 프로그래밍";
 String newStr = subject.replace("자바", "JAVA");
 ```
 
-- 문자열 잘라내기: substring()사용
+- **문자열 잘라내기**: substring()사용
 ```java
 String subejct = "0102030403";
 String cutNumber = subject.substring(0,6); //인덱스0부터 5까지
 ```
 
-- 문자열 분해: split()사용
+- **문자열 분해**: split()사용
 ```java
 String subejct = "자바, 프로그래밍";
 String[] arr = subject.split(",");
 ```
 
-- 배열: 변수에 여러 값을 저장할 때 사용. 
+- **배열**: 변수에 여러 값을 저장할 때 사용. 
 
 (같은 타입의 값만 저장, 배열의 길이는 늘리거나 줄일 수 없음)
 
@@ -59,7 +59,7 @@ season[1] = "여름"
 변수 = new타입[]{10,20,30,40}
 ```
 
-- 배열 복사
+- **배열 복사**
 
 System.arraycopy(원본배열, 원본배열 복사 시작 인덱스, 새 배열, 새 배열 붙여넣기 시작 인덱스, 항목 수)
 
