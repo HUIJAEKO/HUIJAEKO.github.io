@@ -7,7 +7,7 @@ title: "calculate"
 
 오버플로우, 언더플로우: 타입이 허용하는 최대값을 벗어나는 것, 타입이 허용하는 최소값을 벗어나는 것
 
-;;정학한 계산은 정수 연산으로 하는 것이 좋다;;
+**정학한 계산은 정수 연산으로 하는 것이 좋다**
 
 ArithmeticException: 연산값이 intinity이거나 nan일때 발생, Double.isInfinite와 Double.isNaN을 사용해서 확인하는 것이 좋다.
 
@@ -19,4 +19,4 @@ public static void main(String[] args){
 }
 ```
 
-;;연산의 우선순위도 생각해야한다;;
+**연산의 우선순위도 생각해야한다**
