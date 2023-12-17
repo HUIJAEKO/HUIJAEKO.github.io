@@ -27,7 +27,7 @@ title: "애니메이션 효과 구현"
 
 예를 들어 간단하게 이런 방식으로 할 수 있다.
 
-```
+```javascript
 button:hover{animation:sunday 0.5s; animation-fill-mode:forwards;}
 
 @keyframes sunday{
