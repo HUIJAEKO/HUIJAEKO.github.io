@@ -22,6 +22,7 @@ arr2 = new int[]{1,2,3};
 서로 다른 객체로 저장되므로 **arr1 != arr2** 가 된다.
 
 - 참조 타입 변수는 null을 가질 수 있다.
+
 ```java
 int[] intArray = null;
 intArray[0] = 10;
