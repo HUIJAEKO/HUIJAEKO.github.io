@@ -3,7 +3,7 @@ layout: single
 title: "문자열"
 ---
 
-#문자열 다루기
+**문자열 다루기**
 
 문자 추출: charAt() 사용
 ```java
