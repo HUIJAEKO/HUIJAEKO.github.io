@@ -11,7 +11,7 @@ title: "참조 타입"
 
 ;;힙 영역에 객체가 생성된다;;
 
-```
+```java
 arr1 = new int[]{1,2,3};
 arr2 = new int[]{1,2,3};
 ```
@@ -21,7 +21,7 @@ arr2 = new int[]{1,2,3};
 서로 다른 객체로 저장되므로 arr1 != arr2 가 된다.
 
 참조 타입 변수는 null을 가질 수 있다.
-```
+```java
 int[] intArray = null;
 intArray[0] = 10;
 //NullPointException이 된다.
@@ -32,7 +32,7 @@ intArray[0] = 10;
 문자열에서 리터럴이 동일하면 객체를 공유한다.
 
 하지만 new연산자를 사용하면 서로 다른 객체를 사용하게 된다.
-```
+```java
 String name1 = "홍길동";
 String name2 = "홍길동";
 //name1 == name2
@@ -43,7 +43,7 @@ String name4 = new String("홍길동");
 ```
 
 하지만 내부 분자열만을 비교하고 싶을 때에는 equals()메소드를 이용한다
-```
+```java
 boolean result = str1.equals(str2);
 ```
 
