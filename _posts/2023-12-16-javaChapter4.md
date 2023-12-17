@@ -4,7 +4,7 @@ title: "조건문과 반복문"
 ---
 
 if문
-```
+```java
 public static void main(String[] args){
   int score = 93;
 
@@ -15,7 +15,7 @@ public static void main(String[] args){
 ```
 
 switch문
-```
+```java
 public static void main(String[] args){
   int num = (int)(Math.random()*6)+1;
 
@@ -33,7 +33,7 @@ public static void main(String[] args){
 ```
 
 for문
-```
+```java
 public static void main(String[] args){
   int sum = 0;
   for(int i=0; i<=100; i++){
@@ -43,7 +43,7 @@ public static void main(String[] args){
 ```
 
 while문
-```
+```java
 public static void main(String[] args){
   int i = 1;
   while(i<=10){
