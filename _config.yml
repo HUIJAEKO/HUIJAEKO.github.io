@@ -29,6 +29,25 @@
 #masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
 # breadcrumbs            : false # true, false (default)
 #words_per_minute         : 200
+
+minimal_mistakes_skin    : "mint" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+
+# Site Settings
+locale                   : "ko-KR"
+title                    : "Huijae's Blog"
+title_separator          : "-"
+subtitle                 : "운동과 개발을 좋아하는 개발자 노트"
+name                     : "HUIJAEKO"
+description              : "비전공자의 소소한 개발이야기"
+url                      : "https://HUIJAEKO.github.io"
+baseurl                  : # the subpath of your site, e.g. "/blog"
+repository               : # "hwanklim/minimal-mistakes"
+teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
+logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
+masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
+breadcrumbs              : true
+words_per_minute         : 200
+
 comments:
   provider               : # false (default), "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "giscus", "custom"
   disqus:
@@ -259,14 +278,14 @@ tag_archive:
 # https://github.com/jekyll/jekyll-archives
 jekyll-archives:
   enabled:
-    - categories
-    - tags
+   - categories
+   - tags
   layouts:
-    category: archive-taxonomy
-    tag: archive-taxonomy
+   category: archive-taxonomy
+   tag: archive-taxonomy
   permalinks:
-    category: /categories/:name/
-    tag: /tags/:name/
+   category: /categories/:name/
+   tag: /tags/:name/
 
 
 # HTML Compression
