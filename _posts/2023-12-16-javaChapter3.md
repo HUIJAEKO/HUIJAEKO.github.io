@@ -1,6 +1,7 @@
 ---
 layout: single
 title: "calculate"
+categories: java
 ---
 
 - **증감 연산자**: ++i 변수를 1증가 시킨 후 다른 연산 수행, i++ 연산을 끝낸 후 변수를 1증가
