@@ -1,6 +1,7 @@
 ---
 layout: single
 title: "What is java"
+categories: java
 ---
 
 - **파일 실행: 고급 언어가 컴파일되어 기계어로 변환된 뒤 컴퓨터가 사용**
