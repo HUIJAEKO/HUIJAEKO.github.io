@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "조건문과 반복문"
-
+categories: java
 ---
 
 - if문
