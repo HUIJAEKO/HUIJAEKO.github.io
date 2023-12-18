@@ -1,6 +1,7 @@
 ---
 layout: single
 title: "애니메이션 효과 구현"
+categories: css
 ---
 
 **애니메이션 효과 구현에 대하여 메모해두려고 한다.**
