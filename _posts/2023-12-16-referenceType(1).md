@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "참조 타입"
-categories: java
+
 ---
 
 **참조 타입: 객체의 번지를 참조하는 타입**
