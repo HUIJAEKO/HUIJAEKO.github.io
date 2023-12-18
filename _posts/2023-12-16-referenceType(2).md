@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "문자열"
-categories: java
+
 ---
 
 **문자열 다루기**
