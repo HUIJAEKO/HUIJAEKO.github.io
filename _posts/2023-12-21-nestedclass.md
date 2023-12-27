@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "중첩 클래스와 익명 객체"
-categories: java
+categories: 
 ---
 
 :triangular_flag_on_post:`중첩클래스`: 클래스 내부에 선언된 클래스이다.
