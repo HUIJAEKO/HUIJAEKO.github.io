@@ -8,7 +8,7 @@ categories: spring
 
 그리고 관련 내용을 짧게 나마 정리할 예정이다.
 
-:triangular_flag_on_post:`정적 컨텐츠`: 파일을 사용자 화면에 `그대로` 나타내는 것이다. 아무런 `변화 없이 나타나기 때문에` 정적이라는 의미가 있다.
+- `정적 컨텐츠`: 파일을 사용자 화면에 `그대로` 나타내는 것이다. 아무런 `변화 없이 나타나기 때문에` 정적이라는 의미가 있다.
 
 ```html
 <!DOCTYPE HTML>
@@ -33,7 +33,7 @@ categories: spring
 
 
 
-:triangular_flag_on_post:`MVC`: MVC방식은 템플릿 엔진을 `Model, View, Controller방식`으로 나누고, View를 템플릿 엔진으로 프로그래밍하여 `렌더링 된 것을 반환`하는 것이다.
+- `MVC`: MVC방식은 템플릿 엔진을 `Model, View, Controller방식`으로 나누고, View를 템플릿 엔진으로 프로그래밍하여 `렌더링 된 것을 반환`하는 것이다.
 
 MVC방식은 변환되기 때문에 `동적`이다.
 
@@ -73,7 +73,7 @@ Thymeleaf는 name에 저장된 데이터를 가져와 `값을 변환`하고, 변
 ```
 
 
-:triangular_flag_on_post:`API`: 데이터를 JSON 스타일로 바꿔서 반환하는 것이다. View를 거치지 않으며, MVC방식과 마찬가지로 `동적`이다.
+- `API`: 데이터를 JSON 스타일로 바꿔서 반환하는 것이다. View를 거치지 않으며, MVC방식과 마찬가지로 `동적`이다.
 
 기본적으로 `@ResponseBody를 사용`한다.
 
