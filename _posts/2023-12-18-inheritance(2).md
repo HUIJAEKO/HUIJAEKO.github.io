@@ -4,7 +4,7 @@ title: "타입 변환과 다형성, 추상 클래스, 봉인된 클래스"
 categories: java
 ---
 
-:triangular_flag_on_post:`자동타입변환`: 자동적으로 타입 변환이 일어나는 것
+- `자동타입변환`: 자동적으로 타입 변환이 일어나는 것
 
 자동타입변환은 자식타입객체가 부모타입객체로 변환할 때 일어난다.
 
@@ -22,14 +22,14 @@ Cat cat = new Cat();
 Animal animal = cat;
 ```
 
-:triangular_flag_on_post:`강제타입변환`: 부모 타입을 자식 타입으로 변환할 때 사용
+- `강제타입변환`: 부모 타입을 자식 타입으로 변환할 때 사용
 
 ```java
 Animal animal = new Cat(); //자동타입변환
 Cat cat = (Cat) animal;
 ```
 
-:triangular_flag_on_post:`객체 타입 확인`: 어떤 객체가 매개값으로 제공되었는지 확인하는 것
+- `객체 타입 확인`: 어떤 객체가 매개값으로 제공되었는지 확인하는 것
 
 ```java
 boolean result = 객체 instanceof 타입;
@@ -45,7 +45,7 @@ if(animal instanceof Cat cat){
 }
 ```
 
-:triangular_flag_on_post:`다형성`: 사용 방법은 동일하지만 실행 결과가 다양하게 나오는 성질
+- `다형성`: 사용 방법은 동일하지만 실행 결과가 다양하게 나오는 성질
 
 다형성을 위해서는 `자동타입변환` 과 `메소드 오버라이딩`이 필수적으로 있어야 한다.
 
