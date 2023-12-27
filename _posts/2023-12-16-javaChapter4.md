@@ -4,7 +4,7 @@ title: "조건문과 반복문"
 categories: java
 ---
 
-- if문
+- `if문`
 
 ```java
 public static void main(String[] args){
@@ -16,7 +16,7 @@ public static void main(String[] args){
 }
 ```
 
-- switch문
+- `switch문`
 
 ```java
 public static void main(String[] args){
@@ -35,7 +35,7 @@ public static void main(String[] args){
 }
 ```
 
-- for문
+- `for문`
 
 ```java
 public static void main(String[] args){
@@ -46,7 +46,7 @@ public static void main(String[] args){
 }
 ```
 
-- while문
+- `while문`
 
 ```java
 public static void main(String[] args){
