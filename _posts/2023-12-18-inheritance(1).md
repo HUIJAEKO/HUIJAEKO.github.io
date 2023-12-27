@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "class상속, final class, protected 접근 제한자"
-categories: jav
+categories: java
 ---
 
 :triangular_flag_on_post:`클래스 상속`: 부모 클래스의 필드와 메소드를 자식 클래스에게 물려줌
