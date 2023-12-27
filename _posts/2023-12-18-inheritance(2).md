@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "타입 변환과 다형성, 추상 클래스, 봉인된 클래스"
-categories: jav
+categories: java
 ---
 
 :triangular_flag_on_post:`자동타입변환`: 자동적으로 타입 변환이 일어나는 것
