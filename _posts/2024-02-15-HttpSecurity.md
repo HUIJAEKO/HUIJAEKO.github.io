@@ -52,8 +52,8 @@ admin으로 시작하는 모든 URL을을 인증후 ADMIN 레벨의 권한을 �
 
 ```java
 http.formLogin()
-    .loginPage("/login-page")
-    .loginProcessingUrl("/login-process")
+    .loginPage("/login")
+    .loginProcessingUrl("/login")
     .defaultSuccessUrl("/main")
     .successHandler(new CustomAuthenticationSuccessHandler("/main"))
     .failureUrl("login-fail")
