@@ -26,6 +26,8 @@ categories: spring
 
 위 이미지는 스프링 시큐리티의 **처리과정**이다.
 
+**`AuthenticationFilter`** 는 **`SecurityFilterChain`** 에 포함되어 있다.
+
 이미지에 대해서 설명하자면,
 
 1. 사용자가 로그인 폼을 통해 사용자 이름과 비밀번호를 입력하고 로그인을 시도하면, **`UsernamePasswordAuthenticationFilter`** 가 이 HTTP 요청을 가로챈다.
