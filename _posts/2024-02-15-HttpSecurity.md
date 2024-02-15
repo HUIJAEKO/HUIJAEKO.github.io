@@ -55,9 +55,9 @@ http.formLogin()
     .loginPage("/login")
     .loginProcessingUrl("/login")
     .defaultSuccessUrl("/main")
-    .successHandler(new CustomAuthenticationSuccessHandler("/main"))
+    .successHandler(new CustomAuthenticationSuccessHandler())
     .failureUrl("login-fail")
-    .failureHandler(new CustomAuthenticationFailureHandler("/login-fail"))
+    .failureHandler(new CustomAuthenticationFailureHandler())
 ```
 
 - **http.formLogin()**  
@@ -76,17 +76,17 @@ http.formLogin()
 
 로그인 성공 후 페이지 이동
 
-- **successHandler(new CustomAuthenticationSuccessHandler("/main"))**
+- **successHandler(new CustomAuthenticationSuccessHandler())**
 
-커스텀 핸들러를 생성하여 등록하면 인증성공 후 사용자가 추가한 로직을 수행하고 성공 페이지로 이동
+커스텀 핸들러를 생성하여 등록하면 인증성공 후 사용자가 추가한 로직을 수행
 
 - **failureUrl("/login-fail")**
 
 로그인 실패 시 페이지 이동
 
-- **failureHandler(new CustomAuthenticationFailureHandler("/login-fail"))**
+- **failureHandler(new CustomAuthenticationFailureHandler())**
 
-커스텀 핸들러를 생성하여 등록하면 인증실패 후 사용자가 추가한 로직을 수행하고 실패 페이지로 이동
+커스텀 핸들러를 생성하여 등록하면 인증실패 후 사용자가 추가한 로직을 수행
 
 ```java
 http.logout((logout) -> logout
