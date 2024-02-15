@@ -40,11 +40,11 @@ public class SecurityConfig {
 
 - **permitAll**
 
-설정한 리소스의 접근을 인증절차 없이 허용한다는 의미
+설정한 리소스의 접근을 인증 없이 허용한다는 의미
 
 - **hasAnyRole**
 
-admin으로 시작하는 모든 URL은 인증후 ADMIN 레벨의 권한을 가진 사용자만 접근을 허용
+admin으로 시작하는 모든 URL을을 인증후 ADMIN 레벨의 권한을 가진 사용자만 접근을 허용
 
 - **anyRequest**
 
@@ -70,7 +70,7 @@ http.formLogin()
 
 - **loginProcessingUrl("/login")** 
 
-아이디와 비밀번호릏 입력하고 확인을 클릭하면 `/login` 을 호출 하여 인증처리하는 필터가 호출되어 인증처리 수행. 즉 `UsernamePasswordAuthenticationFilter`가 실행
+로그인시 `/login` 을 호출하여 필터가 호출되어 인증처리 수행. 즉 `UsernamePasswordAuthenticationFilter`가 실행
 
 - **defaultSuccessUrl("/main")**
 
@@ -87,6 +87,39 @@ http.formLogin()
 - **failureHandler(new CustomAuthenticationFailureHandler("/login-fail"))**
 
 커스텀 핸들러를 생성하여 등록하면 인증실패 후 사용자가 추가한 로직을 수행하고 실패 페이지로 이동
+
+```java
+http.logout((logout) -> logout
+    .logoutUrl("/logout") 
+    .logoutSuccessUrl("/login") 
+    .invalidateHttpSession(true) 
+    .clearAuthentication(true)
+    .permitAll()
+    );
+```
+
+- **logoutUrl("/logout")**
+
+로그아웃 처리 URL 설정
+
+- **logoutSuccessUrl("/login")**
+
+로그아웃 성공 시 리다이렉션될 URL
+
+- **invalidateHttpSession(true)**
+
+현재 사용자의 HTTP세션 무효화
+
+- **clearAuthentication(true)**
+
+현재 사용자의 인증 정보를 SecurityContext에서 제거
+
+- **permitAll()**
+
+모든 사용자에게 접근 허용
+
+
+
 
 
 
