@@ -62,5 +62,9 @@ public class UserService {
 
 `passwordEncoder.encode(...)` 메서드는 인자로 받은 비밀번호를 암호화하여, 저장하거나 사용할 수 있는 형태의 문자열로 변환한다.
 
+이후 회원가입을 진행하면 암호화가 완료된 것을 볼 수 있다.
+
+![암호화실행](/images/passwordSecurity.png)
+
 
 
