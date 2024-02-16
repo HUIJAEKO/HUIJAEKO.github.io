@@ -16,13 +16,13 @@ categories: spring
 
 인가는 인증된 사용자가 특정 리소스에 접근할 수 있는 권한을 가지고 있는지 확인하는 과정
 
-![기본로직](images/security.png)
+![기본로직](/images/security.png)
 
 위 표는 스프링 **시큐리티의 역할**을 한눈에 파악할 수 있게 해준다. 
 
 스프링 시큐리티는 클라이언트의 모든 **Http요청을 가로챈다.**
 
-![처리과정](images/securityLogic.png)
+![처리과정](/images/securityLogic.png)
 
 위 이미지는 스프링 시큐리티의 **처리과정**이다.
 
