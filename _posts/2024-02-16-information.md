@@ -6,7 +6,7 @@ categories: spring
 
 구현하고 싶은 기능은 아래 사진을 보면 바로 알 수 있다.
 
-![로그인]("/images/loginName.png")
+![로그인](images/loginName.png)
 
 원래 처음 프로젝트를 만들때는 스프링 시큐리티를 이용하지 않았다.
 
