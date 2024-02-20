@@ -124,7 +124,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 이후 메세지 타입이 error일 경우만 경고문을 보여준다.
 
-프론트쪽도 좀 공부해야겠습니다.. 
+SweetAlert를 사용해보았다.
 
 **- 결과**
 
