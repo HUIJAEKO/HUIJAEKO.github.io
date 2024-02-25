@@ -8,26 +8,26 @@ categories: spring
 
 ```html
 <form th:action="@{/user/editPassword}" th:object="${userDTO}"
-			method="post">
-			<div>
-				<label>현재 비밀번호</label> <input type="password" id="currentPw"
-					name="currentPw">
-				<div id="currentPw-error-message" style="color: red;"></div>
-			</div>
-			<div>
-				<label>비밀번호 입력</label> <input type="password" id="newPw"
-					name="newPw">
-			</div>
-			<div>
-				<label>비밀번호 확인</label> <input type="password" id="newPwConfirm"
-					name="newPwConfirm">
-				<div id="newPwConfirm-error-message" style="color: red;"></div>
-			</div>
-			<div>
-				<button type="submit" id="edit_password" >비밀번호
-					변경하기</button>
-			</div>
-		</form>
+  method="post">
+  <div>
+  <label>현재 비밀번호</label> <input type="password" id="currentPw"
+      name="currentPw">
+  <div id="currentPw-error-message" style="color: red;"></div>
+  </div>
+  <div>
+  <label>비밀번호 입력</label> <input type="password" id="newPw"
+    name="newPw">
+  </div>
+  <div>
+  <label>비밀번호 확인</label> <input type="password" id="newPwConfirm"
+    name="newPwConfirm">
+  <div id="newPwConfirm-error-message" style="color: red;"></div>
+  </div>
+  <div>
+    <button type="submit" id="edit_password" >비밀번호
+      변경하기</button>
+  </div>
+</form>
 ```
 
 먼저 **`form`** 태그를 이용하여 **`input`** 과 **`button`** 을 만들어준다.
@@ -36,7 +36,7 @@ categories: spring
 
 ```javascript
 $(document).ready(function() {
-	$("#edit_password").click(function() {
+  $("#edit_password").click(function() {
 		event.preventDefault();
 		var currentPw = $("#currentPw").val();
 		var newPw = $("#newPw").val();
@@ -155,14 +155,14 @@ public ResponseEntity<?> bCryptPasswordEncoder(@RequestBody PasswordChangeReques
 
 ```java
 @Transactional
-	public void changePassword(String username, String newPassword) {
-		UserEntity user = userRepository.findByname(username);
-		if (user != null) {
-			String encodedPassword = bCryptPasswordEncoder.encode(newPassword);
-			user.setPassword(encodedPassword);
-			userRepository.save(user);
+  public void changePassword(String username, String newPassword) {
+    UserEntity user = userRepository.findByname(username);
+    if (user != null) {
+      String encodedPassword = bCryptPasswordEncoder.encode(newPassword);
+      user.setPassword(encodedPassword);
+      userRepository.save(user);
 		} else {
-			throw new UsernameNotFoundException("User not found with username: " + username);
+      throw new UsernameNotFoundException("User not found with username: " + username);
 		}
 	}
 ```
