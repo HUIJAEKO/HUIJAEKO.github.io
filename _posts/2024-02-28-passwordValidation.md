@@ -58,7 +58,7 @@ public String MakeSignUp(@Valid UserDTO userDTO, Errors errors, Model model) {
 
 `errors.hasError()` 에러가 있다면, 아래 로직을 수행한다.
 
-먼저 `model`을 통하여 에러가 발생했을 시 입력했던 것들이 초기화되지 않도록 한다.
+먼저 `model.addAttribute`을 통하여 에러가 발생했을 시 입력했던 것들이 초기화되지 않도록 한다.
 
 이후 `validateHandling` 메서드를 통하여 필드 이름과 관련된 오류 메시지를 포함하는 `Map<String, String>` 타입의 `validatorResult`를 반환한다.
 
@@ -66,7 +66,7 @@ public String MakeSignUp(@Valid UserDTO userDTO, Errors errors, Model model) {
 
 만약 모든 필드가 조건을 만족했다면 데이터를 정상적으로 `DB`에 저장한다.
 
-**4. 마지막으로 `Repository`를 작성한다.**
+**4. 마지막으로 `Service`를 작성한다.**
 
 ```java
 public void save(UserDTO userDTO) {
