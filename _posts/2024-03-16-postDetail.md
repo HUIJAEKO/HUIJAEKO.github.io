@@ -53,34 +53,7 @@ public PostDTO postDetail(Long id) {
 
 **3. 마지막으로 `PostController`를 수정해야 한다.**
 
-컨트롤러를 수정하는 것이 가장 어려웠던 것 같다. 주석을 달아 각 부분에 대한 설명을 추가해놨다.
-
-```java
-//게시글 상세조회(로그인한 사람이 작성자일때, 아닐때 나눠서 이동)
-@GetMapping("/post/postDetail/{id}")
-public String postDetail(@PathVariable("id") Long id, Model model){
-  Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-  Object principal = authentication.getPrincipal();
-  if (principal instanceof CustomUserDetails) {
-    //현재 사용자 정보
-    CustomUserDetails userDetails = (CustomUserDetails) principal;
-    //블로그 글 불러오기
-    PostDTO postDTO = postService.postDetail(id);
-    model.addAttribute("post", postDTO);
-    //블로그 글 작성자 불러오기
-    UserEntity userEntity = postService.getPostWriter(id);
-    //현재 사용자가 블로그 글 작성자라면
-    if (userDetails.getName().equals(userEntity.getName())){
-      return "post/postDetail";
-    }else{
-      return "post/postDetailNotWriter";
-    }
-  }
-    return "post/postDetailNotWriter";
-}
-```
-
-블로그 글을 조회할 떄 가장 고민되는 것이 작성자가 아닌 다른 사용자가 블로그 글을 수정하거나 삭제하면 어떡할지였다. 
+컨트롤러를 수정하는 것이 가장 어려웠던 것 같다. 주석을 달아 각 부분에 대한 설때 가장 고민되는 것이 작성자가 아닌 다른 사용자가 블로그 글을 수정하거나 삭제하면 어떡할지였다. 
 
 하지만 생각해보니 현재 사용자가 블로그 글 작성자일 시와 아닐 시로 나누어서 코드를 짜면 되는 것이었다.
 
