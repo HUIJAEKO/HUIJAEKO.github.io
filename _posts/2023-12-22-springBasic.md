@@ -1,14 +1,71 @@
 ---
 layout: single
-title: "정적 컨텐츠, MVC, API 기본 개념"
+title: "인프런 스프링 입문(프로젝트 환경 설정과 웹 개발 기초)"
 categories: spring
 ---
 
-스프링 웹 개발 기초강의를 들으며 `정적 컨텐츠`, `MVC`, `API`를 알게 되었다.
+#### `이 포스트는 인프런 김영한님의 강의 및 자료를 사용합니다`
 
-그리고 관련 내용을 짧게 나마 정리할 예정이다.
+## 1. 프로젝트 환경 설정
 
-- `정적 컨텐츠`: 파일을 사용자 화면에 `그대로` 나타내는 것이다. 아무런 `변화 없이 나타나기 때문에` 정적이라는 의미가 있다.
+첫번째 글은 프로젝트 설정, 그리고 웹 개발 기초 강의이다.
+
+기본적으로 스프링 프로젝트를 만들 때에는 `start.spring.io`를 이용한다. 
+
+이 페이지에서 사용할 언어, 스프링부트의 버전, 파일 이름, 사용할 라이브러리 등을 설정한다.
+
+프로젝트를 처음 만들고 자신이 사용하는 프레임워크를 이용해 파일을 열게 되면, 가장 중요한 부분이 `gradle` 혹은 `maven`이다. 
+
+이 파일은 우리가 처음 설정한 라이브러리와 관련된 파일이다. 여기서 `gradle`과 같은 파일의 역할은, 의존관계에 있는 라이브러리들을 함께 끌어와주는 역할을 한다.
+
+예를 들어, 처음에 `spring-boot-starter-web`이라는 라이브러리를 설정했다고 가정해보자. 
+
+그렇다면, 이 라이브러리와 의존관계가 있는 `spring-boot-starter-tomcat`, `spring-webmvc` 과 같은 라이브러리를 끌어온다.
+
+아래 `gradle` 파일을 보게 되면, 자바와 스프링부트의 버전, 사용할 라이브러리, 그리고 그 라이브러리를 어디서 가져올 것인지 등을 알 수 있다.
+
+더 자세한 내용은 스프링 공부를 더 하면서 알아보도록 하자!
+
+```java
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.2.4'
+	id 'io.spring.dependency-management' version '1.1.4'
+}
+
+group = 'hello'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	sourceCompatibility = '17'
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
+```
+
+## 2. 웹 개발 기초
+
+스프링 웹 개발의 기본적인 내용에는 `정적 컨텐츠`, `MVC`, `API`가 있다. 
+
+관련된 내용들을 짧게 나마 정리할 예정이다.
+
+1. 정적 컨텐츠 : 파일을 사용자 화면에 그대로 나타내는 것이다. 아무런 변화 없이 나타나기 때문에 정적이라는 의미가 있다.
+
+정적 컨텐츠는 기본적으로 `/main/resources/static` 하위에 파일을 생성한다.
+
+아래 코드 기본적인 `html`파일이며, 파일 이름은 `hello.html`이다.
 
 ```html
 <!DOCTYPE HTML>
@@ -23,9 +80,11 @@ categories: spring
 </html>
 ```
 
-정적 컨텐츠는 기본적으로 `/main/resources/static 하위에 파일을 생성`한다.
+사용자로부터 localhost:8080/hello.html 요청이 들어오면 위의 코드를 기반으로 화면이 클라이언트 쪽으로 나타나게 된다.
 
-사용자로부터 localhost:8080/hello 요청이 들어오면, 가장 먼저 `톰캣이라는 내장 서버를 거치게 된다.`
+원리를 보자면, 
+
+가장 먼저 톰캣이라는 내장 서버를 거치게 된다.
 
 이후 스프링 컨테이너에서 `hello관련 컨트롤러`가 있는지 확인한다. 
 
