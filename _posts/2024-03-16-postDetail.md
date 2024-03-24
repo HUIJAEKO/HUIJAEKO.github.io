@@ -58,3 +58,17 @@ public PostDTO postDetail(Long id) {
 하지만 생각해보니 현재 사용자가 블로그 글 작성자일 시와 아닐 시로 나누어서 코드를 짜면 되는 것이었다.
 
 따라서, `PostService`를 통하여 블로그 작성자에 대한 정보를 가져와서 비교한 뒤, 작성자가 맞는지 확인할 수 있도록 구현하였다
+
+```java
+//블로그 글 불러오기
+PostDTO postDTO = postService.postDetail(id);
+model.addAttribute("post", postDTO);
+//블로그 글 작성자 불러오기
+UserEntity userEntity = postService.getPostWriter(id);
+//현재 사용자가 블로그 글 작성자라면
+if (userDetails.getName().equals(userEntity.getName())){
+  return "post/postDetail";
+}else{
+  return "post/postDetailNotWriter";
+}
+```
