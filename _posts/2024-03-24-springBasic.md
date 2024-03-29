@@ -80,7 +80,7 @@ tasks.named('test') {
 </html>
 ```
 
-사용자로부터 `localhost:8080/hello.html` 요청이 들어오면 위의 코드를 기반으로 화면이 클라이언트 쪽으로 나타나게 된다.
+사용자로부터 `localhost:8080/hello-static.html` 요청이 들어오면 위의 코드를 기반으로 화면이 클라이언트 쪽으로 나타나게 된다.
 
 원리를 보자면, 
 
