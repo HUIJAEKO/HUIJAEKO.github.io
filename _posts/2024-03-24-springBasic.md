@@ -92,6 +92,10 @@ tasks.named('test') {
 
 정적 컨텐츠기 때문에 관련 컨트롤러가 없어 `/resource/static`폴더 하위에서 `hello-static.html` 파일을 찾아 반환해준다.
 
+결과
+
+![api결과](/images/staticResult.png)
+
 #### **2. MVC : MVC방식은 템플릿 엔진을 Model, View, Controller로 나누고, View를 템플릿 엔진으로 프로그래밍하여 렌더링 된 것을 반환하는 것이다.**
 
 기본적으로 `@Controller`와 `@GetMapping`이 필요하다.
@@ -144,6 +148,10 @@ public class helloController {
 
 변환된 파일을 반환하기 때문에 동적이다.
 
+결과
+
+![api결과](/images/mvcResult.png)
+
 #### **3. API : 데이터를 JSON 스타일로 바꿔서 반환하는 것이다. View를 거치지 않으며, MVC방식과 마찬가지로 동적이다.**
 
 기본적으로 `@ResponseBody`를 사용한다.
@@ -182,6 +190,10 @@ public class HelloController {
 그 중에서도 단순 문자라면 `StringConverter`, `JsonConverter`로 처리된다. 
 
 이후 http로 직접 반환된다. 반환된 값은 `{"name":"spring"}` 형태로 나타난다.
+
+결과
+
+![api결과](/images/apiResult.png)
 
 
 
