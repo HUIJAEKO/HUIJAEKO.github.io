@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "포스트 삭제"
+title: "포스트 삭제, client로 정보를 잘 전달하자"
 categories: spring
 ---
 
@@ -84,7 +84,7 @@ function confirmDelete(id) {
 
 여기서는 서버에서 사용자가 선택한 게시글의 아이디값을 가져오는 `${post.id}`로직이 있어야한다.
 
-이 로직이 없다면, `ajax`의 ` url: '/post/delete/' + id` 부분에서 id값이 null이 된다.
+이 로직이 없다면, `ajax`의 `url: '/post/delete/' + id` 부분에서 id값이 null이 된다.
 
 이렇게 구현을 완료했다면, 글삭제가 정상적으로 진행된다.
 
