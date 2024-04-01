@@ -80,7 +80,7 @@ public String SignUp(@ModelAttribute User user) {
 
 - **해결방안**
 
-리다이렉트를 뺄 수 있으면 빼고, 써야하는 상황이면 다음과 같이 GET요청을 수정한다.
+리다이렉트를 뺄 수 있으면 빼고, 써야하는 상황이면 다음과 같이 `GET`요청을 수정한다.
 
 ```java
 @GetMapping("/main")
