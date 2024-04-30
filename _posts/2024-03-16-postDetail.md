@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "사용자에 따른 게시글 조회 - 작성자만 수정, 삭제할 수 있습니다"
+title: "사용자에 따른 게시글 조회 - 작성자만 수정, 삭제"
 categories: spring
 ---
 
