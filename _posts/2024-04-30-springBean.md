@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "인프런 스프링 입문(스프링빈과 웹MVC개발)"
+title: "인프런 스프링 입문(스프링빈)"
 categories: spring
 ---
 
