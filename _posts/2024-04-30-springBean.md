@@ -6,7 +6,7 @@ categories: spring
 
 #### `이 포스트는 인프런 김영한님의 강의 및 자료를 사용합니다`
 
-## 1. 스프링 빈과 의존관계
+## 스프링 빈과 의존관계
 
 이전 포스트를 보면 알 수 있는 것처럼 스프링의 기본 구조는 다음과 같다.
 
@@ -42,7 +42,7 @@ public class MemberController {
 
 이제 스프링 빈으로 등록을 해보자. 스프링 빈으로 등록하는 방법에는 두 가지가 있다.
 
-1. 컴포넌트 스캔
+## 1. 컴포넌트 스캔
 
 첫번째는 상대적으로 더 많이 사용하는 컴포넌트 스캔이다. 
 
@@ -84,7 +84,7 @@ public class MemberService {
 public class MemoryMemberRepository implements MemberRepository {}
 ```
 
-2. 자바 코드로 직접 등록
+## 2. 자바 코드로 직접 등록
 
 다음은 컴포넌트 스이 아닌 자바 코드로 직접 등록하는 방법이다.
 
