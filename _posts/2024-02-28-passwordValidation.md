@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "필드 제약걸기, 비밀번호에는 특수문자가 필수이다."
+title: "필드 제약걸기, 비밀번호에는 특수문자가 필수."
 categories: spring
 ---
 
