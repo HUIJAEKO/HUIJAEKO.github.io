@@ -86,7 +86,7 @@ public class MemoryMemberRepository implements MemberRepository {}
 
 ## 2. 자바 코드로 직접 등록
 
-다음은 컴포넌트 스이 아닌 자바 코드로 직접 등록하는 방법이다.
+다음은 컴포넌트 스캔이 아닌 자바 코드로 직접 등록하는 방법이다.
 
 먼저 코드를 보자.
 
