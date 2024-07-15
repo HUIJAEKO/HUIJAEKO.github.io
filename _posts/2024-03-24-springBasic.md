@@ -28,30 +28,30 @@ categories: spring
 
 ```java
 plugins {
-	id 'java'
-	id 'org.springframework.boot' version '3.2.4'
-	id 'io.spring.dependency-management' version '1.1.4'
+  id 'java'
+  id 'org.springframework.boot' version '3.2.4'
+  id 'io.spring.dependency-management' version '1.1.4'
 }
 
 group = 'hello'
 version = '0.0.1-SNAPSHOT'
 
 java {
-	sourceCompatibility = '17'
+  sourceCompatibility = '17'
 }
 
 repositories {
-	mavenCentral()
+  mavenCentral()
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
-	implementation 'org.springframework.boot:spring-boot-starter-web'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+  implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+  implementation 'org.springframework.boot:spring-boot-starter-web'
+  testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
 tasks.named('test') {
-	useJUnitPlatform()
+  useJUnitPlatform()
 }
 ```
 
@@ -61,7 +61,9 @@ tasks.named('test') {
 
 관련된 내용들을 짧게 나마 정리할 예정이다.
 
-#### **1. 정적 컨텐츠 : 파일을 사용자 화면에 그대로 나타내는 것이다. 아무런 변화 없이 나타나기 때문에 정적이라는 의미가 있다.**
+#### 1. 정적 컨텐츠 
+
+파일을 사용자 화면에 그대로 나타내는 것이다. 아무런 변화 없이 나타나기 때문에 정적이라는 의미가 있다.
 
 정적 컨텐츠는 기본적으로 `/main/resources/static` 하위에 파일을 생성한다.
 
@@ -96,7 +98,9 @@ tasks.named('test') {
 
 ![api결과](/images/staticResult.png)
 
-#### **2. MVC : MVC방식은 템플릿 엔진을 Model, View, Controller로 나누고, View를 템플릿 엔진으로 프로그래밍하여 렌더링 된 것을 반환하는 것이다.**
+#### 2. MVC 
+
+MVC방식은 템플릿 엔진을 Model, View, Controller로 나누고, View를 템플릿 엔진으로 프로그래밍하여 렌더링 된 것을 반환하는 것이다.
 
 기본적으로 `@Controller`와 `@GetMapping`이 필요하다.
 
@@ -124,7 +128,7 @@ public class helloController {
 
 원리를 알아보기전에 `@RequestParam` 어노테이션에 대해서 알아보도록 하겠다.
 
-- `@RequestParam` : 클라이언트가 보낸 HTTP 요청 파라미터를 컨트롤러 메서드의 파라미터로 쉽게 받아올 수 있게 해주는 어노테이션
+`@RequestParam` : 클라이언트가 보낸 HTTP 요청 파라미터를 컨트롤러 메서드의 파라미터로 쉽게 받아올 수 있게 해주는 어노테이션
 
 쉽게 말해서 특정 경로로 요청을 보낼때, 예를 들어 `localhost:8080/hello-mvc?name=spring`으로 요청을 보낼때, `name=spring`부분에서 `spring`이라는 문자열을 `name`에 담아주는 어노테이션이다.
 
@@ -152,13 +156,15 @@ public class helloController {
 
 ![api결과](/images/mvcResult.png)
 
-#### **3. API : 데이터를 JSON 스타일로 바꿔서 반환하는 것이다. View를 거치지 않으며, MVC방식과 마찬가지로 동적이다.**
+#### 3. API
+
+데이터를 JSON 스타일로 바꿔서 반환하는 것이다. View를 거치지 않으며, MVC방식과 마찬가지로 동적이다.
 
 기본적으로 `@ResponseBody`를 사용한다.
 
 여기서도 먼저 `@ResponseBody`에 대해서 알아보도록 하겠다.
 
-- `@ResponseBody` : 컨트롤러 메서드에서 반환하는 값을 HTTP 본문으로 직접 사용하겠다는 것을 나타낸다.
+`@ResponseBody` : 컨트롤러 메서드에서 반환하는 값을 HTTP 본문으로 직접 사용하겠다는 것을 나타낸다.
 
 직접 사용하기 때문에, MVC방식과는 다르게 `viewResolver`를 사용하지 않는다. 이때, 데이터는 클라이언트에 전송될 적절한 형식(JSON, XML 등)으로 변환된다.
 
