@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "ajax를 통한 회원탈퇴, ajax는 왜 쓰는가? 그리고 회원 중복 검사까지"
+title: "ajax를 통한 회원탈퇴와 회원 중복 검사, ajax는 왜 쓰는가? "
 categories: spring
 ---
 
