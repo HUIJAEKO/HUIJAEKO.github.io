@@ -17,21 +17,21 @@ th:onclick="confirmDelete()">탈퇴하기</button>
 
 ```javascript
 function confirmDelete() {
-    var confirmation = confirm("정말로 탈퇴하시겠습니까?");
-    if (confirmation) {
-            $.ajax({
-                url: '/user/delete', 
-                type: 'DELETE',
-                success: function(result) {
-                    alert("탈퇴 처리가 완료되었습니다.");
-                    window.location.href = '/user/login'; 
-                },
-                error: function(xhr, status, error) {
-                    alert("탈퇴 처리 중 문제가 발생했습니다.");
-                }
-            });
-        }
-    }
+  var confirmation = confirm("정말로 탈퇴하시겠습니까?");
+  if (confirmation) {
+    $.ajax({
+      url: '/user/delete', 
+      type: 'DELETE',
+      success: function(result) {
+        alert("탈퇴 처리가 완료되었습니다.");
+        window.location.href = '/user/login'; 
+      },
+      error: function(xhr, status, error) {
+        alert("탈퇴 처리 중 문제가 발생했습니다.");
+      }
+    });
+  }
+}
 ```
 
 먼저 탈퇴버튼을 누를 시 정말로 탈퇴할 지 경고창을 띄운다.
@@ -66,10 +66,10 @@ Ajax의 가장 큰 특징은 비동기적으로 서버와 통신한다는 점이
 
 ```java
 @DeleteMapping("/user/delete")
-	public String DeleteUser(@AuthenticationPrincipal CustomUserDetails user) {
-	userService.deleteUser(user.getId());		
-		SecurityContextHolder.clearContext();
-		return "user/login";
+  public String DeleteUser(@AuthenticationPrincipal CustomUserDetails user) {
+    userService.deleteUser(user.getId());		
+    SecurityContextHolder.clearContext();
+    return "user/login";
 	}
 ```
 
@@ -113,32 +113,32 @@ public void deleteUser(Long id) {
 
 ```javascript
 const usernameDuplicate = () =>{
-	const dupleName = document.getElementById("username").value;
-	const checkResult = document.getElementById("username_duplicate");
-	const signupButton = document.getElementById("signupButton");
-	$.ajax({
-		type: "post",
-		dataType:"text",
-		url: "/user/usernameCheck",
-		data: {
-			"username":dupleName
-		},
-		success: function(result){
-			if(result =="ok"){
-				checkResult.innerHTML="사용가능합니다";
-				checkResult.style.color="green";
-				signupButton.disabled = false;
-			}else{
-				checkResult.innerHTML="이미 존재하는 아이디입니다";
-				checkResult.style.color="red";
-				signupButton.disabled = true;
-			}
-		},
-		
-		error: function(){
-			alert("ajax실패");
-		}
-	});
+  const dupleName = document.getElementById("username").value;
+  const checkResult = document.getElementById("username_duplicate");
+  const signupButton = document.getElementById("signupButton");
+  $.ajax({
+    type: "post",
+    dataType:"text",
+    url: "/user/usernameCheck",
+    data: {
+      "username":dupleName
+    },
+    success: function(result){
+      if(result =="ok"){
+        checkResult.innerHTML="사용가능합니다";
+        checkResult.style.color="green";
+        signupButton.disabled = false;
+      }else{
+        checkResult.innerHTML="이미 존재하는 아이디입니다";
+        checkResult.style.color="red";
+        signupButton.disabled = true;
+      }
+    },
+    
+    error: function(){
+      alert("ajax실패");
+    }
+  });
 ```
 
 `usernameDuplicate()`이 작동하면, `"/user/usernameCheck"` 주소로 POST요청을 한다. 
@@ -151,10 +151,10 @@ const usernameDuplicate = () =>{
 
 ```java
 @PostMapping("/user/usernameCheck")
-	public @ResponseBody String idCheck(@RequestParam(name = "username") String username) {
-		String checkResult = userService.idcheck(username);
-		return checkResult;
-	}
+public @ResponseBody String idCheck(@RequestParam(name = "username") String username) {
+  String checkResult = userService.idcheck(username);
+  return checkResult;
+}
 ```
 
 먼저 사용자가 입력한 아이디를 `RequestParam`을 통해 `idcheck`메소드에서 사용한다.
@@ -165,13 +165,13 @@ const usernameDuplicate = () =>{
 
 ```java
 public String idcheck(String username){
-		Optional<UserEntity> optionalUserEntity = userRepository.findByUsername(username);
-		if(optionalUserEntity.isEmpty()) {
-			return "ok";
-		}else {
-			return "no";
-		}
-	}
+  Optional<UserEntity> optionalUserEntity = userRepository.findByUsername(username);
+  if(optionalUserEntity.isEmpty()) {
+    return "ok";
+  }else {
+    return "no";
+  }
+}
 ```
 
 `idcheck`메서드는, 먼저 `Repository`를 통하여 `database`에서 사용자가 회원가입 할 때 입력한 아이디 값을 불러오도록 시도한다.
