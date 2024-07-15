@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "비밀번호 암호화와 비밀번호 변경"
+title: "비밀번호 암호화와 비밀번호 변경, @Transactional?"
 categories: spring
 ---
 
@@ -15,11 +15,11 @@ categories: spring
 ```java
 @Configuration
 public class SecurityConfig {
-	
-	@Bean
-	public BCryptPasswordEncoder bCryptPasswordEncoder() {		
-		return new BCryptPasswordEncoder();
-	}
+  @Bean
+  public BCryptPasswordEncoder bCryptPasswordEncoder() {		
+    return new BCryptPasswordEncoder();
+  }
+}
 ```
 
 이제 `Controller`와 `Service`에 로그인 로직을 작성한다
@@ -27,33 +27,32 @@ public class SecurityConfig {
 ```java
 @Controller
 public class UserController {
-
   @Autowired
-	private UserService userService;
+  private UserService userService;
   
   @PostMapping("/signup")
-  	public String MakeSignUp(@ModelAttribute UserDTO userDTO) {
-  	    userService.save(userDTO);
-  	    return "login";
-  	}
+  public String MakeSignUp(@ModelAttribute UserDTO userDTO) {
+    userService.save(userDTO);
+    return "login";
+  }
 }
 ```
 
 ```java
 @Service
 public class UserService {
-
-	@Autowired
-	private UserRepository userRepository;
-	
-	@Autowired
-	private BCryptPasswordEncoder bCryptPasswordEncoder;
-
-	public void save(UserDTO userDTO) {
-		UserEntity userEntity = UserEntity.toUserEntity(userDTO);
-		userEntity.setPassword(bCryptPasswordEncoder.encode(userDTO.getPassword()));
-		userRepository.save(userEntity);
-	}
+  @Autowired
+  private UserRepository userRepository;
+  
+  @Autowired
+  private BCryptPasswordEncoder bCryptPasswordEncoder;
+  
+  public void save(UserDTO userDTO) {
+    UserEntity userEntity = UserEntity.toUserEntity(userDTO);
+    userEntity.setPassword(bCryptPasswordEncoder.encode(userDTO.getPassword()));
+    userRepository.save(userEntity);
+  }
+}
 ```
 
 먼저 `BCryptEncoder` 타입의 객체에 대한 의존성 주입을 요청한다.
@@ -153,29 +152,28 @@ $(document).ready(function() {
 
 ```java
 public class PasswordChangeRequest {
-	private String currentPw;
-	private String newPw;
-	private String newPwConfirm;
-	
-	
-	public String getCurrentPw() {
-		return currentPw;
-	}
-	public void setCurrentPw(String currentPw) {
-		this.currentPw = currentPw;
-	}
-	public String getNewPw() {
-		return newPw;
-	}
-	public void setNewPw(String newPw) {
-		this.newPw = newPw;
-	}
-	public String getNewPwConfirm() {
-		return newPwConfirm;
-	}
-	public void setNewPwConfirm(String newPwConfirm) {
-		this.newPwConfirm = newPwConfirm;
-	}
+  private String currentPw;
+  private String newPw;
+  private String newPwConfirm;
+  
+  public String getCurrentPw() {
+    return currentPw;
+  }
+  public void setCurrentPw(String currentPw) {
+    this.currentPw = currentPw;
+  }
+  public String getNewPw() {
+    return newPw;
+  }
+  public void setNewPw(String newPw) {
+    this.newPw = newPw;
+  }
+  public String getNewPwConfirm() {
+    return newPwConfirm;
+  }
+  public void setNewPwConfirm(String newPwConfirm) {
+    this.newPwConfirm = newPwConfirm;
+  }
 }
 ```
 
@@ -196,7 +194,6 @@ public ResponseEntity<?> bCryptPasswordEncoder(@RequestBody PasswordChangeReques
         // 비밀번호 변경 로직 실행
         userService.changePassword(currentUser.getUsername(), request.getNewPw());
     }
-
     return ResponseEntity.ok().body(Map.of("message", "비밀번호가 성공적으로 변경되었습니다."));
 }
 ```
@@ -217,16 +214,16 @@ public ResponseEntity<?> bCryptPasswordEncoder(@RequestBody PasswordChangeReques
 
 ```java
 @Transactional
-  public void changePassword(String username, String newPassword) {
-    UserEntity user = userRepository.findByname(username);
-    if (user != null) {
-      String encodedPassword = bCryptPasswordEncoder.encode(newPassword);
-      user.setPassword(encodedPassword);
-      userRepository.save(user);
-		} else {
-      throw new UsernameNotFoundException("User not found with username: " + username);
-		}
-	}
+public void changePassword(String username, String newPassword) {
+  UserEntity user = userRepository.findByname(username);
+  if (user != null) {
+    String encodedPassword = bCryptPasswordEncoder.encode(newPassword);
+    user.setPassword(encodedPassword);
+    userRepository.save(user);
+  } else {
+    throw new UsernameNotFoundException("User not found with username: " + username);
+  }
+}
 ```
 
 먼저 **`userRepository.findByname(username)`** 을 사용하여 사용자를 조회한다. 
