@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "로그인 성공 시 스프링 시큐리티에서 프론트로 정보 보내기, 실패핸들러까지 만들어보기기"
+title: "로그인시 클라이언트로 정보 보내기, +++실패핸들러"
 categories: spring
 ---
 
@@ -30,15 +30,15 @@ categories: spring
 
 ```java
 @GetMapping("/main")
-	public String LoginSuccess(Model model) {
-		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-		Object principal = authentication.getPrincipal();
-		if(principal instanceof CustomUserDetails) {
-			CustomUserDetails userDetails = (CustomUserDetails) principal;
-		  model.addAttribute("username", userDetails.getName());
-		}
-		return "main";
-	}
+public String LoginSuccess(Model model) {
+  Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+  Object principal = authentication.getPrincipal();
+  if(principal instanceof CustomUserDetails) {
+    CustomUserDetails userDetails = (CustomUserDetails) principal;
+    model.addAttribute("username", userDetails.getName());
+  }
+  return "main";
+}
 ```
 
 스프링 시큐리티는 로그인 성공 시 **`SecurityContextHolder`** 에 정보를 저장한다.
@@ -115,19 +115,18 @@ public class CustomAuthenticationFailureHandler extends SimpleUrlAuthenticationF
 
 ```java
 @GetMapping("/user/login")
-	public String login(@RequestParam(value = "error", required = false) Boolean error,
+public String login(@RequestParam(value = "error", required = false) Boolean error,
 									HttpSession session, Model model) {
-		if(Boolean.TRUE.equals(error)) {
-			String errorCode = (String) session.getAttribute("loginMessage");
-			String errorMessage = switch (errorCode) {
-				case "badCredentials" -> "아이디 또는 비밀번호가 일치하지 않습니다";
-				default -> "알 수 없는 오류가 발생했습니다. 관리자에게 문의해주세요";
-			};
-			model.addAttribute("loginMessage", errorMessage);
-		}
-		
-		return "user/login";
-	}
+if(Boolean.TRUE.equals(error)) {
+  String errorCode = (String) session.getAttribute("loginMessage");
+  String errorMessage = switch (errorCode) {
+    case "badCredentials" -> "아이디 또는 비밀번호가 일치하지 않습니다";
+    default -> "알 수 없는 오류가 발생했습니다. 관리자에게 문의해주세요";
+  };
+  model.addAttribute("loginMessage", errorMessage);
+  }
+  return "user/login";
+}
  ```
 
 가장 먼저 **`error`** 값을 **`Boolean`** 타입으로 받아온다.
