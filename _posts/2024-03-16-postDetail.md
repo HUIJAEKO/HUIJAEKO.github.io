@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "사용자에 따른 게시글 조회 - 작성자만 수정, 삭제"
+title: "사용자에 따른 게시글 조회 -> 작성자만 수정하거나 삭제할 수 있도록"
 categories: spring
 ---
 
@@ -12,7 +12,7 @@ categories: spring
 
 추가적으로 아직 댓글에 대한 기능은 구현하지 않은 상태이다.
 
-**1. 먼저 `PostDetail.html` 파일과 `PostDetailNotWriter.html` 파일로 나누었다.** 
+**1. 먼저 PostDetail.html 파일과 PostDetailNotWriter.html 파일로 나누었다.** 
 
 `PostDetail.html` 파일에만 수정, 삭제버튼을 추가해주었다.
 
@@ -22,7 +22,7 @@ categories: spring
 <button onclick="history.back()">뒤로가기</button>
 ```
 
-**2. `PostService`에 블로그 글을 불러오고, 작성자를 불러올 수 있도록 구현하였다.**
+**2. PostService에 블로그 글을 불러오고, 작성자를 불러올 수 있도록 구현하였다.**
 
 ```java
 public UserEntity getPostWriter(Long id){
@@ -51,7 +51,7 @@ public PostDTO postDetail(Long id) {
 
 아래 있는 메서드는 블로그 글을 `DTO`로 전환하여 리턴하는 메서드이다.
 
-**3. 마지막으로 `PostController`를 수정해야 한다.**
+**3. 마지막으로 PostController를 수정해야 한다.**
 
 컨트롤러를 수정하는 것이 가장 어려웠던 것 같다. 가장 고민되는 것이 작성자가 아닌 다른 사용자가 블로그 글을 수정하거나 삭제하면 어떡할지였는데, 
 
