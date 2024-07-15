@@ -8,11 +8,11 @@ categories: spring
 
 그럼 시큐리티에서 중요한 인증(Authentication)과 인가(Authorization)는 무엇인가?
 
-- **인증(Authentication)**
+**인증(Authentication)**
 
 인증은 사용자가 누구인지 확인하는 과정. 사용자가 로그인 할 때 사용자 이름과 비밀번호를 제공하고, 스프링 시큐리티는 이 정보를 사용하여 사용자의 신원을 확인
 
-- **인가(Authorization)**
+**인가(Authorization)**
 
 인가는 인증된 사용자가 특정 리소스에 접근할 수 있는 권한을 가지고 있는지 확인하는 과정
 
@@ -70,19 +70,19 @@ public class SecurityConfig {
 }
 ```
 
-- **antMatchers**
+**antMatchers**
 
 특정 리소스에 대해서 권한을 설정
 
-- **permitAll**
+**permitAll**
 
 설정한 리소스의 접근을 인증 없이 허용한다는 의미
 
-- **hasAnyRole**
+**hasAnyRole**
 
 admin으로 시작하는 모든 URL을을 인증후 ADMIN 레벨의 권한을 가진 사용자만 접근을 허용
 
-- **anyRequest**
+**anyRequest**
 
 인증 후 특정 권한을 가진 사용자만 접근가능한 리소스를 설정하고 그외 나머지 리소스들은 무조건 인증을 완료해야 접근이 가능
 
@@ -96,31 +96,31 @@ http.formLogin()
     .failureHandler(new CustomAuthenticationFailureHandler())
 ```
 
-- **http.formLogin()**  
+**http.formLogin()**  
 
 로그인 폼 페이지와 로그인 처리 성공 실패 등을 사용
 
-- **loginPage("/login")** 
+**loginPage("/login")** 
 
 로그인 페이지
 
-- **loginProcessingUrl("/login")** 
+**loginProcessingUrl("/login")** 
 
 로그인시 `/login` 을 호출하여 필터가 호출되어 인증처리 수행. 즉 `UsernamePasswordAuthenticationFilter`가 실행
 
-- **defaultSuccessUrl("/main")**
+**defaultSuccessUrl("/main")**
 
 로그인 성공 후 페이지 이동
 
-- **successHandler(new CustomAuthenticationSuccessHandler())**
+**successHandler(new CustomAuthenticationSuccessHandler())**
 
 커스텀 핸들러를 생성하여 등록하면 인증성공 후 사용자가 추가한 로직을 수행
 
-- **failureUrl("/login-fail")**
+**failureUrl("/login-fail")**
 
 로그인 실패 시 페이지 이동
 
-- **failureHandler(new CustomAuthenticationFailureHandler())**
+**failureHandler(new CustomAuthenticationFailureHandler())**
 
 커스텀 핸들러를 생성하여 등록하면 인증실패 후 사용자가 추가한 로직을 수행
 
@@ -134,23 +134,23 @@ http.logout((logout) -> logout
     );
 ```
 
-- **logoutUrl("/logout")**
+**logoutUrl("/logout")**
 
 로그아웃 처리 URL 설정
 
-- **logoutSuccessUrl("/login")**
+**logoutSuccessUrl("/login")**
 
 로그아웃 성공 시 리다이렉션될 URL
 
-- **invalidateHttpSession(true)**
+**invalidateHttpSession(true)**
 
 현재 사용자의 HTTP세션 무효화
 
-- **clearAuthentication(true)**
+**clearAuthentication(true)**
 
 현재 사용자의 인증 정보를 SecurityContext에서 제거
 
-- **permitAll()**
+**permitAll()**
 
 모든 사용자에게 접근 허용
 
