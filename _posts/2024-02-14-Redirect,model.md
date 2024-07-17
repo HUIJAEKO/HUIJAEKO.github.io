@@ -59,15 +59,16 @@ public String SignUp(@ModelAttribute User user) {
 
 ```java
 @PostMapping("/login")
-	    public String login(@ModelAttribute UserDTO userDTO,HttpSession session, Model model) {
-	        UserDTO loginResult = userService.login(userDTO);  
-	        if (loginResult != null) {
-	            session.setAttribute("loginInformation", loginResult);
-	            model.addAttribute("loginName", loginResult.getName());
-	            return "redirect:/main";
-	        } else {
-	        	model.addAttribute("loginError", "아이디 또는 비밀번호가 일치하지 않습니다.");
-	            return "redirect:/login";
+public String login(@ModelAttribute UserDTO userDTO,HttpSession session, Model model) {
+  UserDTO loginResult = userService.login(userDTO);  
+  if (loginResult != null) {
+    session.setAttribute("loginInformation", loginResult);
+    model.addAttribute("loginName", loginResult.getName());
+    return "redirect:/main";
+  } else {
+    model.addAttribute("loginError", "아이디 또는 비밀번호가 일치하지 않습니다.");
+    return "redirect:/login";
+}
 ```
 
 기존에 이런 식으로 코드를 짰었다. 하지만 로그인 성공 후 메인 페이지로 이동할 때 `loginName`에 자꾸 null이 떴다.
