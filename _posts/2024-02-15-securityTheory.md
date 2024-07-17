@@ -38,7 +38,7 @@ categories: spring
 
 4. 인증 성공: 사용자 인증이 성공하면, **`AuthenticationManager`** 는 권한 정보가 포함된 새로운 **`UsernamePasswordAuthenticationToken`** 객체를 반환한다. 이제 이 객체는 인증된 상태로 간주되며, 사용자의 신원과 권한 정보를 담고 있다.
 
-5. 보안 컨텍스트에 인증 정보 저장: 인증된 **`UsernamePasswordAuthenticationToken`** 객체는 스프링 시큐리티의 **`보안 컨텍스트(SecurityContext)`** 에 저장된다.
+5. 보안 컨텍스트에 인증 정보 저장: 인증된 **`UsernamePasswordAuthenticationToken`** 객체는 스프링 시큐리티의 **보안 컨텍스트(SecurityContext)** 에 저장된다.
 
 ## HttpSecurity 는 스프링 시큐리티의 설정 중 하나로, 웹 보안 설정을 위한 다양한 메서드를 제공한다. 
 
