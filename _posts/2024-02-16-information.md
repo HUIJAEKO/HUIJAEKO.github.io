@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "로그인시 클라이언트로 정보 보내기, +++실패핸들러"
+title: "로그인시 클라이언트로 정보 보내기 + 실패핸들러"
 categories: spring
 ---
 
