@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "Model객체 사용이유, 그리고 model객체에 username을 넣고 Redirect를 하려 했는데 안되는 현상"
+title: "Model객체 사용이유, 그리고 Model객체에 정보 담기"
 categories: spring
 ---
 
