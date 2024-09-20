@@ -4,6 +4,8 @@ title: "Docker basic of basic"
 categories: docker
 ---
 
+![dockerImage](/images/dockerImage.png)
+
 ## 도커, 이미지, 컨테이너란?
 
 **Docker**
