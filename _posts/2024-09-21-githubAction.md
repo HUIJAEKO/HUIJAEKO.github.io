@@ -21,7 +21,7 @@ Continuous Integration, Continuous Deployment. 즉, 테스트, 통합, 배포과
 
 ## 전체흐름
 
-1. 개발(Develop)
+#### 개발(Develop)
 
 - 개발 단계는 개발자가 로컬 환경에서 코드를 작성하고 변경하는 단계이다. 이 단계에서는 주로 IDE를 사용하여 기능을 구현하고, 버전 관리 시스템(Git)을 통해 변경 사항을 관리한다.
 
@@ -30,14 +30,14 @@ Continuous Integration, Continuous Deployment. 즉, 테스트, 통합, 배포과
   - 버그 수정
   - 코드 리팩토링
 
-2. 커밋(Commit)
+#### 커밋(Commit)
 
 - 커밋 단계는 개발자가 로컬에서 작성한 코드를 Git 리포지토리에 커밋하고 푸시하는 단계이다. 이 단계에서 GitHub Actions이 이벤트를 감지하여 워크플로우를 실행한다.
 
 - 주요 활동
   - git add, git commit, git push 명령어를 통해 변경 사항을 리포지토리에 반영
 
-3. 빌드(Build)
+#### 빌드(Build)
 
 - 빌드 단계는 소스 코드를 컴파일하고 실행 가능한 바이너리나 패키지로 만드는 과정이다.
 
@@ -45,7 +45,7 @@ Continuous Integration, Continuous Deployment. 즉, 테스트, 통합, 배포과
   - Maven, Gradle 등을 사용하여 프로젝트 빌드
   - Docker 이미지를 빌드
 
-4. 테스트(Test)
+#### 테스트(Test)
 
 - 테스트 단계는 빌드된 코드가 올바르게 동작하는지 검증하는 과정입니다. 단위 테스트, 통합 테스트, E2E 테스트 등이 포함된다.
 
@@ -53,7 +53,7 @@ Continuous Integration, Continuous Deployment. 즉, 테스트, 통합, 배포과
   - 자동화된 테스트 실행
   - 테스트 결과 리포팅
 
-5. 배포(Deploy)
+#### 배포(Deploy)
 
 - 배포 단계는 테스트를 통과한 코드를 배포하는 과정이다.
 
