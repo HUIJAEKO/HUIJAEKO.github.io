@@ -1,7 +1,7 @@
 ---
 layout: single
 title:  "스택과 큐, 브루트포스 알고리즘"
-categories: Algorithm
+categories: algorithm
 ---
 
 ## ADT
