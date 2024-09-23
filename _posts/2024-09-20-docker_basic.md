@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "Docker basic of basic"
+title: "Docker - basic"
 categories: docker
 ---
 
