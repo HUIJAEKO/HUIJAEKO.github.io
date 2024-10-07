@@ -98,3 +98,44 @@ categories: algorithm
 
 따라서 평균적인 경우의 시간 복잡도는 최악의 경우와 동일하게 O($N^2$)이다.
 
+## 백준2750
+
+![2750](/images/2750.png)
+
+```java
+import java.util.Scanner;
+
+public class Sort {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int N = input.nextInt();  // 입력받을 숫자의 개수
+        int[] arr = new int[N];   // 숫자를 저장할 배열
+
+        // 입력된 숫자를 배열에 저장
+        for (int i = 0; i < N; i++) {
+            arr[i] = input.nextInt();
+        }
+
+        // 버블 정렬 구현
+        for (int i = 0; i < N - 1; i++) {
+            for (int j = 0; j < N - 1 - i; j++) {  // 이미 정렬된 부분을 제외하기 위해 N - 1 - i
+                if (arr[j] > arr[j + 1]) {  // 인접한 두 요소 비교
+                    // 두 요소를 교환
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
+        }
+
+        // 정렬된 결과 출력
+        for (int i = 0; i < N; i++) {
+            System.out.println(arr[i]);
+        }
+    }
+}
+```
+
+![2750result](/images/2750result.png)
+
+
