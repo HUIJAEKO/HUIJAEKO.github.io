@@ -35,6 +35,8 @@ categories: docker
 
 ## 자주 사용하는 도커 명령어
 
+![dockerimage2](/images/dockerimages2)
+
 - docker pull 이미지명 : 이미지 다운받기
 - docker image ls : 이미지 목록 확인
 - docker rmi 이미지id : 이미지 삭제
