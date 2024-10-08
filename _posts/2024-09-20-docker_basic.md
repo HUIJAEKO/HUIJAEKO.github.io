@@ -35,20 +35,20 @@ categories: docker
 
 ## 자주 사용하는 도커 명령어
 
-- docker pull 이미지명(nginx, mysql...) : 이미지 다운받기
+- docker pull 이미지명 : 이미지 다운받기
 - docker image ls : 이미지 목록 확인
-- docker image rm 이미지id : 이미지 삭제
-- docker image rm $(docker images -q) : 컨테이너에서 사용하고 있지 않은 이미지 모두 삭제
-
-- docker create 이미지명 : 이미지를 바탕으로 컨테이너 생성(docker pull로 이미지를 다운받지 않아도 create를 쓰면 자동으로 이미지를 만들고 컨테이너 생성)
+- docker rmi 이미지id : 이미지 삭제
+- docker rmi -f $(docker images -q) : 컨테이너에서 사용하고 있지 않은 이미지 모두 삭제
+- docker create 이미지명 : 이미지를 바탕으로 컨테이너 생성(pull로 이미지를 다운받지 않아도 create를 쓰면 자동으로 이미지를 만들고 컨테이너 생성)
 - docker ps -a : 모든 컨테이너 정보
+- docker ps : 실행중인 컨테이너 정보
 - docker start 컨테이너id : 생성된 컨테이너 실행
-
 - docker stop 컨테이너id : 컨테이너 중지
 - docker rm 컨테이너id : 컨테이너 삭제
-
-- docker run 이미지명 : docker create와 start를 한번에 처리해줌
-- docker run -d —name 이름 -p [호스트포트]:[컨테이너포트] 이미지명
+- docker run 이미지명 : docker create와 start를 한번에 처리
+- docker run -d —name 이름 -p [호스트포트]:[컨테이너포트] 이미지명 : 백그라운드 실행, 이름 지정, 포트포워딩
+- docker attach 컨테이너id : 컨테이너 내부로 접근
 - docker logs 컨테이너id : 컨테이너 로그 확인
+- docker -v [절대경로] 이미지명 : 도커 파일 연결
 
 - docker exec -it 컨테이너id bash : 배쉬 환경으로 실행중인 컨테이너 내부에 접속
